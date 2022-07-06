@@ -246,8 +246,8 @@ pn532_i2c:
             id: activity_led
             brightness: 100%
             red: 0%
-            green: 100%
-            blue: 0%
+            green: 0%
+            blue: 100%
             flash_length: 500ms
     
     - delay: 0.15s #to fix slow component

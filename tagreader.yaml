@@ -149,13 +149,13 @@ logger:
 # Enable Home Assistant API
 api:
   services:
-  - service: rfidreader_tag_ok
-    then:
-    - rtttl.play: "beep:d=16,o=5,b=100:b"
+#  - service: rfidreader_tag_ok
+#    then:
+#    - rtttl.play: "beep:d=16,o=5,b=100:b"
 
-  - service: rfidreader_tag_ko
-    then:
-    - rtttl.play: "beep:d=8,o=5,b=100:b"
+#  - service: rfidreader_tag_ko
+#    then:
+#    - rtttl.play: "beep:d=8,o=5,b=100:b"
 
   - service: play_rtttl
     variables:

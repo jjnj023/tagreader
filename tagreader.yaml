@@ -10,7 +10,7 @@ wifi:
 captive_portal:
 
 dashboard_import:
-  package_import_url: github://smarthomejunkie/tagreader/tagreader.yaml
+  package_import_url: github://jjnj023/tagreader/tagreader.yaml
 
 improv_serial:
 

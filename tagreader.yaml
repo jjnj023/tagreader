@@ -367,11 +367,70 @@ rtttl:
 # Configure LED
 light:
 - platform: neopixelbus
-  variant: WS2812
+  variant: 800KBPS
   pin: D8
-  num_leds: 1
+  num_leds: 24
   flash_transition_length: 500ms
   type: GRB
   id: activity_led
   name: "${friendly_name} LED"
   restore_mode: ALWAYS_OFF
+  effects:
+    - addressable_rainbow:
+        name: Rainbow Effect With Custom Values
+        speed: 10
+        width: 50
+    - addressable_rainbow:
+        name: Rainbow Effect With Custom Values faster
+        speed: 30
+        width: 50
+    - addressable_scan:
+        name: Scan Effect With Custom Values
+        move_interval: 50ms
+        scan_width: 1
+    - addressable_scan:
+        name: Scan Effect With Custom Values 2
+        move_interval: 20ms
+        scan_width: 3
+    - pulse:
+        name: "Fast Pulse"
+        transition_length: 0.2s
+        update_interval: 0.2s
+    - pulse:
+        name: "Slow Pulse"
+        # transition_length: 1s      # defaults to 1s
+        update_interval: 2s
+    - random:
+        name: Random Effect With Custom Values
+        transition_length: 5s
+        update_interval: 7s
+    - strobe:
+        name: Strobe Effect With Custom Values
+        colors:
+          - state: true
+            brightness: 100%
+            red: 100%
+            green: 90%
+            blue: 0%
+            duration: 500ms
+          - state: false
+            duration: 250ms
+          - state: true
+            brightness: 100%
+            red: 100%
+            green: 0%
+            blue: 0%
+            duration: 500ms
+    - addressable_color_wipe:
+        name: Color Wipe Effect With Custom Values
+        colors:
+          - red: 100%
+            green: 100%
+            blue: 0%
+            num_leds: 1
+          - red: 60%
+            green: 0%
+            blue: 0%
+            num_leds: 3
+        add_led_interval: 200ms
+        reverse: false
